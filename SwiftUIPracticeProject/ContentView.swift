@@ -9,13 +9,42 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationView {
+            VStack {
+                Text("HELLO, \nMY POLAROID")
+                    .font(.largeTitle)
+                    .bold()
+                .foregroundStyle(.blue)
+                Image(uiImage: UIImage.launch)
+                Spacer()
+                NavigationLink {
+                    MBTIView()
+                } label: {
+                    BottomButtonView(title: "시작하기")
+                }
+            }
         }
-        .padding()
+        
+
+
+        
+    }
+}
+
+struct BottomButtonView: View {
+    let title: String
+    var body: some View {
+        HStack(spacing: 20) {
+            Spacer()
+            Text(title)
+                .font(.title2)
+                .padding()
+                .frame(maxWidth: .infinity)
+                .background(.blue)
+                .clipShape(.capsule)
+            .foregroundStyle(.white)
+            Spacer()
+        }
     }
 }
 
