@@ -38,11 +38,13 @@ struct MBTIView: View {
     
     var body: some View {
         VStack {
-            Image(uiImage: UIImage.profile0)
-                .resizable()
-                .frame(width: 100, height: 100)
-                .clipShape(.circle)
-                .overlay(Circle().stroke(.blue, lineWidth: 3))
+//            ProfileImage()
+            NavigationLink {
+                ProfileImageSelectView()
+            } label: {
+                ProfileImageView(image: Image(uiImage: UIImage.profile0))
+            }
+
             
             TextField("닉네임을 입력해주세요 :)", text: $nickname)
                 .padding()
@@ -76,6 +78,19 @@ struct MBTIView: View {
 
         }
         .navigationTitle("PROFILE SETTING")
+    }
+    
+
+}
+
+struct ProfileImageView: View {
+    let image: Image
+    var body: some View {
+        image
+            .resizable()
+            .frame(width: 100, height: 100)
+            .clipShape(.circle)
+            .overlay(Circle().stroke(.blue, lineWidth: 3))
     }
 }
 
