@@ -20,6 +20,8 @@
 		54750BF82C8834D50035FE6A /* CoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BF72C8834D50035FE6A /* CoinView.swift */; };
 		54750BFA2C8836BD0035FE6A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BF92C8836BD0035FE6A /* NavigationLazyView.swift */; };
 		54750BFE2C8836E90035FE6A /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BFD2C8836E90035FE6A /* CoinDetailView.swift */; };
+		54750C002C8845F80035FE6A /* InstagramPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BFF2C8845F80035FE6A /* InstagramPractice.swift */; };
+		54750C022C884C440035FE6A /* RandomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750C012C884C440035FE6A /* RandomImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,8 @@
 		54750BF72C8834D50035FE6A /* CoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinView.swift; sourceTree = "<group>"; };
 		54750BF92C8836BD0035FE6A /* NavigationLazyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		54750BFD2C8836E90035FE6A /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
+		54750BFF2C8845F80035FE6A /* InstagramPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramPractice.swift; sourceTree = "<group>"; };
+		54750C012C884C440035FE6A /* RandomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				54750BCE2C8580160035FE6A /* Preview Content */,
 				54750BDA2C85A12E0035FE6A /* SearchView.swift */,
 				54750BF92C8836BD0035FE6A /* NavigationLazyView.swift */,
+				54750BFF2C8845F80035FE6A /* InstagramPractice.swift */,
+				54750C012C884C440035FE6A /* RandomImageView.swift */,
 			);
 			path = SwiftUIPracticeProject;
 			sourceTree = "<group>";
@@ -175,9 +181,11 @@
 				54750BE32C8618120035FE6A /* ProfileImageSelectView.swift in Sources */,
 				54750BDB2C85A12E0035FE6A /* SearchView.swift in Sources */,
 				54750BFE2C8836E90035FE6A /* CoinDetailView.swift in Sources */,
+				54750C002C8845F80035FE6A /* InstagramPractice.swift in Sources */,
 				54750BF42C8834750035FE6A /* Market.swift in Sources */,
 				54750BF82C8834D50035FE6A /* CoinView.swift in Sources */,
 				54750BD72C8583030035FE6A /* MBTIView.swift in Sources */,
+				54750C022C884C440035FE6A /* RandomImageView.swift in Sources */,
 				54750BD92C85908E0035FE6A /* CompleteView.swift in Sources */,
 				54750BCB2C8580140035FE6A /* ContentView.swift in Sources */,
 				54750BC92C8580140035FE6A /* SwiftUIPracticeProjectApp.swift in Sources */,
