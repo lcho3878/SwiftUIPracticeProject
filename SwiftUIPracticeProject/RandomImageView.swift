@@ -7,73 +7,89 @@
 
 import SwiftUI
 
-struct RandomImageView: View {
-    enum Section: CaseIterable{
-        case movie
-        case drama
-        case day
-        case month
-        case year
-        
-        var sectionTitle: String {
-            switch self {
-            case .movie:
-                "영화"
-            case .drama:
-                "드라마"
-            case .day:
-                "일간 순위"
-            case .month:
-                "월간 순위"
-            case .year:
-                "연간 순위"
-            }
-        }
-        
-        var urls: [URL?] {
-            return (0..<10).map { _ in
-                return URL(string: "https://picsum.photos/id/\(Int.random(in: 1...100))/200/300")
-            }
+struct RandomImageURL {
+    static func randomUrl() -> [URL?]  {
+        return (0..<10).map { _ in
+            return URL(string: "https://picsum.photos/id/\(Int.random(in: 1...100))/200/300")
         }
     }
-    private let sections = Section.allCases
+}
+
+struct RandomImageView: View {
+    init() {
+        print("RandomImageView 다시 그려짐")
+    }
+    
+    struct Section: Hashable {
+        let id = UUID()
+        let index: Int
+        var title: String
+    }
+    
+    let randomUrls = [
+        RandomImageURL.randomUrl(),
+        RandomImageURL.randomUrl(),
+        RandomImageURL.randomUrl(),
+        RandomImageURL.randomUrl(),
+    ]
+    
+    @State private var sections = [
+        Section(index: 0, title: "첫번째 섹션"),
+        Section(index: 1, title: "두번째 섹션"),
+        Section(index: 2, title: "세번째 섹션"),
+        Section(index: 3, title: "네번째 섹션"),
+    ]
     
     var body: some View {
         NavigationView {
             ScrollView {
-                ForEach(sections, id: \.self) { section in
-                    SectionView(section: section)
+                print("스크롤뷰")
+            
+            return ForEach($sections, id: \.id) { $section in
+                SectionView(section: $section, urls: randomUrls[section.index])
                 }
             }
-                .navigationTitle("My Random Image")
+            .navigationTitle("My Random Image")
         }
     }
     
     struct SectionView: View {
-        let section: Section
+        @Binding var section: Section
+        let urls: [URL?]
         
         var body: some View {
-            VStack(alignment: .leading) {
-                Text(section.sectionTitle)
+            print("sectionview")
+            return VStack(alignment: .leading) {
+                Text(section.title)
                     .font(.title3)
                     .bold()
                     .padding(.leading)
                 ScrollView(.horizontal) {
                     LazyHStack {
                         ForEach(0..<10) { item in
-                            let urls = section.urls[item]
-                            return NavigationLink {
-                                RandomDetailView(title: section.sectionTitle, url: urls)
-                            } label: {
-                                RandomImage(url: urls)
-                            }
+                            Navigation(section: $section, item: item, urls: urls)
                         }
                     }
                 }
             }
         }
-    }
     
+    }
+    struct Navigation: View {
+        @Binding var section: Section
+        let item: Int
+        let urls: [URL?]
+        
+        var body: some View {
+            return NavigationLink {
+                RandomDetailView(section: $section, url: urls[item])
+            } label: {
+                RandomImage(url: urls[item])
+            }
+        }
+        
+        
+    }
     
 }
 
@@ -85,17 +101,22 @@ struct RandomImage: View {
             .frame(width: 120, height: 200)
             .clipShape(RoundedRectangle(cornerRadius: 25))
     }
+    
+    init(url: URL?) {
+        self.url = url
+    }
 }
 
 struct RandomDetailView: View {
-    let title: String
+    @Binding var section: RandomImageView.Section
     let url: URL?
-
+    
     var body: some View {
         RandomImage(url: url)
-        Text(title)
+        Text(section.title)
+        TextField("수정하자", text: $section.title)
     }
-}
+} 
 
 #Preview {
     RandomImageView()
