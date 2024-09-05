@@ -22,6 +22,7 @@
 		54750BFE2C8836E90035FE6A /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BFD2C8836E90035FE6A /* CoinDetailView.swift */; };
 		54750C002C8845F80035FE6A /* InstagramPractice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750BFF2C8845F80035FE6A /* InstagramPractice.swift */; };
 		54750C022C884C440035FE6A /* RandomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54750C012C884C440035FE6A /* RandomImageView.swift */; };
+		54E94DCF2C89CCAF001B8053 /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E94DCE2C89CCAF001B8053 /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		54750BFD2C8836E90035FE6A /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		54750BFF2C8845F80035FE6A /* InstagramPractice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramPractice.swift; sourceTree = "<group>"; };
 		54750C012C884C440035FE6A /* RandomImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomImageView.swift; sourceTree = "<group>"; };
+		54E94DCE2C89CCAF001B8053 /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				54750BF92C8836BD0035FE6A /* NavigationLazyView.swift */,
 				54750BFF2C8845F80035FE6A /* InstagramPractice.swift */,
 				54750C012C884C440035FE6A /* RandomImageView.swift */,
+				54E94DCE2C89CCAF001B8053 /* CategoryView.swift */,
 			);
 			path = SwiftUIPracticeProject;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				54750BF82C8834D50035FE6A /* CoinView.swift in Sources */,
 				54750BD72C8583030035FE6A /* MBTIView.swift in Sources */,
 				54750C022C884C440035FE6A /* RandomImageView.swift in Sources */,
+				54E94DCF2C89CCAF001B8053 /* CategoryView.swift in Sources */,
 				54750BD92C85908E0035FE6A /* CompleteView.swift in Sources */,
 				54750BCB2C8580140035FE6A /* ContentView.swift in Sources */,
 				54750BC92C8580140035FE6A /* SwiftUIPracticeProjectApp.swift in Sources */,
