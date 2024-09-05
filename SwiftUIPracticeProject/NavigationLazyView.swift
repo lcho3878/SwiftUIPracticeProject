@@ -15,6 +15,6 @@ struct NavigationLazyView<Content: View>: View {
     
     init(_ closure: @autoclosure @escaping () -> Content) {
         self.closure = closure
-        print("NavigationLazyView Init")
+//        print("NavigationLazyView Init")
     }
 }

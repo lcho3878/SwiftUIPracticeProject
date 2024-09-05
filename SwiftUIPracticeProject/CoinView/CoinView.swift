@@ -16,6 +16,7 @@ struct CoinView: View {
     @State private var market: Markets = []
     @State private var name = ""
     @State private var searchText = ""
+    @State private var list: Markets = []
     
     var body: some View {
         NavigationView {
@@ -24,6 +25,10 @@ struct CoinView: View {
                 listView()
             }
             .searchable(text: $searchText, prompt: "코인 검색")
+            .onSubmit(of: .search) {
+                list = searchText.isEmpty ? market : market.filter {$0.koreanName.contains(searchText)}
+                print(searchText)
+            }
             .refreshable {
                 name =  market.randomElement()?.koreanName ?? "sadf"
             }
@@ -33,6 +38,7 @@ struct CoinView: View {
             do {
                 let result = try await UpbitAPI.fetchMarket()
                 market = result
+                list = market
             }
             catch {
                 
@@ -43,7 +49,7 @@ struct CoinView: View {
     
     func listView() -> some View {
         LazyVStack {
-            ForEach($market, id: \.id) { market in
+            ForEach($list, id: \.id) { market in
                 NavigationLink {
                     NavigationLazyView(CoinDetailView(market: market))
                 } label: {
